@@ -12,8 +12,19 @@ public class Client {
 //            throw new RuntimeException(e);
             System.out.println("An exception has happened in reading");
             System.out.println("Doing more Stuff");
+            return;
         } finally {
+            boolean ans = fun();
+            System.out.println("Ans from fun is "+ ans);
             System.out.println("Executing the necessary statement");
+        }
+    }
+    static boolean fun(){
+        try{
+            return true; //intially ans = true will get stored
+        } finally {
+            System.out.println("Printing fun");
+            return false; //after coming to finally block ans is overrided to false
         }
     }
 }
